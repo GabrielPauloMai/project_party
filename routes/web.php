@@ -20,8 +20,8 @@ use Ramsey\Uuid\Builder\FallbackBuilder;
 //get, post, patch, delete,options
 
 Route::get('/', function () {
-    return view('indexparty');
-})->name('home');;
+    return view('index');
+})->name('home');
 
 Route::resource('/client', ClientController::class);
 Route::resource('/party', PartyController::class);
