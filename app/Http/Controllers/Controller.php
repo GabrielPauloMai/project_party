@@ -35,7 +35,12 @@ class Controller extends BaseController
         $this->service->whatsapp($number, $text);
 
     }
- 
+    
+    public function sessionWhatsApp(){
+
+        $this->service->sessionWhatsApp();
+
+    }
 
     public function send(Request $request){
         {

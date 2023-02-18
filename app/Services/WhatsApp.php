@@ -75,4 +75,25 @@ class WhatsApp
         }
     }
 
+    public function sessionWhatsApp()
+    {
+            Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
+            'Content-Type' => 'application/json'])
+            ->post('http://host.docker.internal:3000/api/sessions/start', [
+            "name" => "default"
+            ]);
+
+            $this->screenshot();
+         
+    }
+
+    public function screenshot(){
+        $response = Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
+        'Content-Type' => 'application/json'])
+        ->get('http://host.docker.internal:3000/api/screenshot');
+
+        return $response;
+    }
+
+
 }

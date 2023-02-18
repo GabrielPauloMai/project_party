@@ -29,3 +29,4 @@ Route::get('dateslocation', [Controller::class,'dates']);
 Route::get('getInfos',[PartyController::class,'getInfos']);
 Route::get('denied/{id}',[PartyController::class,'denied']);
 Route::get('permited/{id}',[PartyController::class,'permited']);
+Route::get('session',[Controller::class,'sessionWhatsApp']);
