@@ -1,5 +1,5 @@
 function api() {
-  let url = 'http://localhost:8989/api/dateslocation';
+  let url = 'http://191.101.0.238/api/dateslocation';
   let request = new XMLHttpRequest();
   request.open("GET", url, false);
   request.send();
@@ -12,8 +12,6 @@ function main() {
   let dates = JSON.parse(data);
   let date = [];
   let minDt = new Date().toLocaleDateString();
-  let parts = minDt.split('/');
-  let minDat = parts[2] + '-' + parts[1] + '-' + parts[0];
  
 
   dates.forEach(element => {
@@ -31,7 +29,7 @@ function main() {
     language: 'pt-BR',
     autoclose: true,
     todayHighlight: true,
-    minDate: '+2d',
+    minDate: minDt,
     datesDisabled: date,
   });
 

@@ -59,11 +59,12 @@
                                 </div>
                             </div>
 
+                       
 
                             <div class="col-6">
                                 <label for="text" class="form-label">Data da Festa</label>
                                 <input class="form-control datepicker" type="text" id="datepicker" name="date"
-                                    value="" min="{{today()}}" max="">
+                                    value="{{date('d/m/Y')}}" min="{{date('d/m/Y')}}" max="">
                             </div>
 
                             <div class="col-3">

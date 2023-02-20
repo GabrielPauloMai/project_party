@@ -20,7 +20,7 @@ services:
         image: nginx:alpine
         restart: unless-stopped
         ports: 
-            - "8989:8989"
+            - "80:80"
         volumes: 
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
@@ -43,19 +43,13 @@ services:
         networks: 
             - laravel
 
+
     # redis
     redis:
         image: redis:latest
-        restart: unless-stopped
         networks: 
             - laravel
 
 networks: 
     laravel:
         driver: bridge
-
-    #whatsapp
-        whatsapp: whatsapp
-        restart: unless-stopped
-        network: 
-            - laravel

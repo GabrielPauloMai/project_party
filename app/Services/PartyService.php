@@ -13,10 +13,13 @@ class PartyService
     {
         $ev = DB::select("select * from types_events where id = $request->type");
         $price = $ev[0]->price;
+        $date = explode('/',$request->date);
+        $date_init = ($date[2].'-'.$date[1].'-'.$date[0].' '.$request->init);
+        $date_end = ($date[2].'-'.$date[1].'-'.$date[0].' '.$request->end);
         $party_id = DB::table('parties')->insertGetId([
             'type' => $request->type,
-            'date_init' => $request->date . ' ' . $request->init,
-            'date_end' => $request->date . ' ' . $request->end,
+            'date_init' => $date_init,
+            'date_end' => $date_end,
             'guests' => $request->guests,
             'price' => $price,
             'description' => $request->description,
