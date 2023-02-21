@@ -16,39 +16,57 @@
     <link rel="stylesheet" href="{{ url('assets/bootstrap/css/index.css') }}">
     <script src="{{ url('/assets/bootstrap/js/balloon.js') }}" defer></script>
     <script src="{{ url('/assets/bootstrap/js/index.js') }}" defer></script>
+    <style>
+        @keyframes load{
+            to{transform: rotate(360deg)}
+        }
+        .pre{
+            width:80px; height:80px;
+            background-image:url("https://ilustracode.com.br/assets/images/load.png");
+            background-position:center;
+            background-size:contain;
+            animation: load 2s infinite linear;
+            z-index: 2;
+        }
+        .box-load{
+            position: absolute;
+            width:100%; height:100%;
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+
+            #content{
+                display: none;
+            }
+        }
+
+    </style>
+    <script>
+        function loading(){
+            document.getElementsByClassName('box-load')[0].style.display = "none";
+            document.getElementById('content').style.display = "flex";
+
+        }
+    </script>
+
 @endsection
 
 @section('title')
     Início
 @endsection
 
-{{-- @section('header')
-    <div class="relative">
-        <div class="mx-auto max-w-6xl px-6">
-            <div class="flex items-center justify-between pt-4 pb-2 md:space-x-10">
-                <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="{{url('/')}}">
-                        <img class="h-10 w-auto sm:h-16" src="{{ url('/assets/bootstrap/img/logo.svg') }}"
-                            alt="">
-                    </a>
-                </div>
-                <nav class="hidden space-x-10 md:flex">
-                    <a href="#cont1" class="text-base font-medium text-white hover:text-gray-900">O Espaço</a>
-                    <a href="#app" class="text-base font-medium text-white hover:text-gray-900">Fotos</a>
-                    <a href="#cont3" class="text-base font-medium text-white hover:text-gray-900">Contato</a>
-
-                </nav>
-            </div>
-        </div>
-    </div>
+@section('load')
+<div class="box-load">
+    <div class="pre"> </div>
+</div>
 @endsection
 
-@section('top')
-@endsection --}}
 
 @section('content')
     
-    <div class="flex justify-center py-10 flex-wrap">
+    <div id="content" class="flex justify-center py-10 flex-wrap">
         <div class="max-w-[95%] sm:max-w-[85%]"> 
             <div id="banner" class="-z-1 flex flex-wrap justify-center bg-white border-0 border-transparent border-solid drop-shadow-[0_35px_35px_rgba(0,0,0,0.65)] rounded bg-clip-border grid grid-cols-0 divide-y">
                 <div class="relative">
