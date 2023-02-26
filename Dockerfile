@@ -33,8 +33,6 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-# RUN whatsapp
-RUN docker run -e WHATSAPP_START_SESSION=default -p 127.0.0.1:3000:3000/tcp --name whatsapp devlikeapro/whatsapp-http-api 
 
 # Set working directory
 WORKDIR /var/www

@@ -53,7 +53,7 @@ Olá, eu sou o sistema que auxilia a Lucia no agendamento de eventos! Este é o 
 
 Clique no link abaixo e inicie o seu cadastro.
 
-https://gabrielcode.live";
+https://casadefestas.digital/client/create";
 
     $this->service->whatsapp($number, $text);
     }
