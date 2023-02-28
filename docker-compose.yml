@@ -53,9 +53,3 @@ services:
 networks: 
     laravel:
         driver: bridge
-
-    #whatsapp
-        whatsapp: whatsapp
-        restart: unless-stopped
-        network: 
-            - laravel
