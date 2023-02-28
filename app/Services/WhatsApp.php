@@ -13,7 +13,7 @@ class WhatsApp
 
         $response = Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
         'Content-Type' => 'application/json'])
-        ->post('http://host.docker.internal:3000/api/sendText', [
+        ->post('http://172.17.0.1:3000/api/sendText', [
             'chatId' => $number,
             "text" => $text,
             "session" => "default"
@@ -41,7 +41,7 @@ class WhatsApp
 
             Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
             'Content-Type' => 'application/json'])
-            ->post('http://host.docker.internal:3000/api/sendText', [
+            ->post('http://172.17.0.1:3000/api/sendText', [
             'chatId' => '554792627617@c.us',
             "text" => $text,
             "session" => "default"
@@ -67,7 +67,7 @@ class WhatsApp
 
             Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
             'Content-Type' => 'application/json'])
-            ->post('http://host.docker.internal:3000/api/sendText', [
+            ->post('http://172.17.0.1:3000/api/sendText', [
             'chatId' => '554792627617@c.us',
             "text" => $text,
             "session" => "default"
@@ -79,7 +79,7 @@ class WhatsApp
     {
             Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
             'Content-Type' => 'application/json'])
-            ->post('http://host.docker.internal:3000/api/sessions/start', [
+            ->post('http://172.17.0.1:3000/api/sessions/start', [
             "name" => "default"
             ]);
 
@@ -90,7 +90,7 @@ class WhatsApp
     public function screenshot(){
         $response = Http::withHeaders(['X-Api-Key' => 'h8eeNNrp7u4Z63e921b413af1',
         'Content-Type' => 'application/json'])
-        ->get('http://host.docker.internal:3000/api/screenshot');
+        ->get('http://172.17.0.1:3000/api/screenshot');
 
         return $response;
     }

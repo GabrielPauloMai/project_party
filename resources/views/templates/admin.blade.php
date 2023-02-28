@@ -9,12 +9,13 @@
     <link rel="icon" type="image/x-icon" href="{{url('assets/bootstrap/img/party-baloons.png')}}">
     @yield('add')
 </head>
-<body 
+<body onLoad="loading()"
  class="bg-gradient-to-b from-[#bd908a] to-[#f2f2f2]">
     
 
         <main>
             @yield('top')
+            @yield('load')
             @yield('content')
         </main>
     
