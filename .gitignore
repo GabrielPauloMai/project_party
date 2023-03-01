@@ -4,8 +4,10 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
+
+.docker/mysql
 .env.backup
+.env
 .env.production
 .phpunit.result.cache
 Homestead.json
