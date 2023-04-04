@@ -1,5 +1,6 @@
 function api() {
-  let url = 'http://191.101.0.238/api/dateslocation';
+  let url = 'https://casadefestas.digital/api/dateslocation';
+  // let url = 'http://localhost/api/dateslocation';
   let request = new XMLHttpRequest();
   request.open("GET", url, false);
   request.send();
@@ -32,7 +33,7 @@ function main() {
     today: "Hoje",
     monthsTitle: "Meses",
     clear: "Limpar",
-};
+  };
 
 
 

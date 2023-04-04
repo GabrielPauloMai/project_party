@@ -59,7 +59,7 @@ https://casadefestas.digital/client/create";
     }
 
     public function dates(){
-        $dates_events = DB::select("select DATE_FORMAT(date_init,'%d/%m/%Y')as dates from parties where date_init > CURDATE()");
+        $dates_events = DB::select("SELECT DATE_FORMAT(date_init, '%d/%m/%Y') as dates FROM parties INNER JOIN event ON parties.id = event.party_id WHERE date_init > CURDATE() AND event.status <> 4");
         return $dates_events;
     }
 
