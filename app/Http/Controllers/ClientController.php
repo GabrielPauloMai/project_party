@@ -48,7 +48,6 @@ class ClientController extends Controller
     {
         $id_client = DB::table('clients')->insertGetId([
             'name'=>$request->name,
-            'email'=>$request->email,
             'phone'=>$request->phone,
             'state'=>$request->state,
             'city'=>$request->city,

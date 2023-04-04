@@ -59,9 +59,16 @@ https://casadefestas.digital/client/create";
     }
 
     public function dates(){
-        $types_events = DB::select("select DATE_FORMAT(date_init,'%d/%m/%Y')as dates from parties where date_init > CURDATE()");
-        return $types_events;
+        $dates_events = DB::select("select DATE_FORMAT(date_init,'%d/%m/%Y')as dates from parties where date_init > CURDATE()");
+        return $dates_events;
     }
+
+    public function week(){
+
+        $this->service->week();
+
+    }
+
 
 
 

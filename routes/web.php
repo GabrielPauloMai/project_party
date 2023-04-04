@@ -23,6 +23,13 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+
+
+Route::get('/register/laravel', function () {
+    return view('welcome');
+})->name('register');
+
+
 Route::resource('/client', ClientController::class);
 Route::resource('/party', PartyController::class);
 

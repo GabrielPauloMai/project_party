@@ -1,22 +1,4 @@
-// function validate() {
-//   'use strict'
 
-//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//   var forms = document.querySelectorAll('.needs-validation')
-
-//   // Loop over them and prevent submission
-//   Array.prototype.slice.call(forms)
-//     .forEach(function (form) {
-//       form.addEventListener('submit', function (event) {
-//         if (!form.checkValidity()) {
-//           event.preventDefault()
-//           event.stopPropagation()
-//         }
-
-//         form.classList.add('was-validated')
-//       }, false)
-//     })
-// }
 
 const handlePhone = (event) => {
   let input = event.target
@@ -32,6 +14,10 @@ const phoneMask = (value) => {
 }
 
 
-
-validate()
-
+function main(){
+let comments = document.getElementById('comments');
+comments.addEventListener('click', z);
+function z(){
+  console.log('entrou');
+}
+}

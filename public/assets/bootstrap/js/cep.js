@@ -11,6 +11,7 @@ function select(usuario) {
     let opt = document.createElement("option");
     opt.value = usuario.id;
     opt.innerHTML = usuario.nome;
+    // opt.className = "text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9";
 
     return opt;
 }
@@ -61,7 +62,7 @@ function main() {
     function x() {
         state();
         selec.removeEventListener('click', x);
-
+        
     }
 
 
