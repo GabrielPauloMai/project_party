@@ -151,7 +151,7 @@ Agradecemos sua paciência e compreensão.';
 
         foreach ($events as $event) {
             $eve = $event->city;
-            $json = file_get_contents("https://servicodados.ibge.gov.br/api/v1/localidades/municipios/$eve");
+            $json = file_get_contents("http://servicodados.ibge.gov.br/api/v1/localidades/municipios/$eve");
             $city = json_decode($json, true);
             $event->city = $city['nome'];
             $event->phone = $whatsapp->format($event->phone);
